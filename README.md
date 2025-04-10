@@ -155,12 +155,12 @@ The models are trained and evaluated using an 80-20 train-test split with strati
 
 ### Best Model Selection
 
-The model with the highest accuracy on the test set is selected. In this case, the SVM model achieved the highest accuracy of 71.75%.
+The model with the highest accuracy on the test set is selected. In this case, the SVM model achieved the highest accuracy of 72.69%.
 
 ---
 
 ## Generating Predictions
-The best-performing model (SVM) is applied to the validation data to generate predictions:
+The best-performing model (Logistic Regression) is applied to the validation data to generate predictions:
 
 ```
 final_prediction_series = apply_best_model(bool_lr, bool_svm, bool_dt, bool_rf, bool_nb, model_data, final_val_data)
@@ -171,17 +171,17 @@ submission_df.to_csv("Predicted_Data.csv",index = False)
 ---
 
 ## Model Performance
-The best model (SVM) achieved an accuracy of 71.75% on the test set with the following classification report:
+The best model (SVM) achieved an accuracy of 72.69% on the test set with the following classification report:
 
 ```
               precision    recall  f1-score   support
 
-           0       0.71      0.66      0.69       741
-           1       0.72      0.77      0.74       845
+           0       0.74      0.64      0.69       741
+           1       0.72      0.80      0.76       845
 
-    accuracy                           0.72      1586
-   macro avg       0.72      0.71      0.71      1586
-weighted avg       0.72      0.72      0.72      1586
+    accuracy                           0.73      1586
+   macro avg       0.73      0.72      0.72      1586
+weighted avg       0.73      0.73      0.72      1586
 ```
 
 ---
